@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend-app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+  /* 1. Phần CSS: Trang trí nút bấm */
+  .floating-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(180deg, #fc7fa9 0%, #ffe3ab 100%);
+  color: white;
+  border: none;
+  border-radius: 50%; /* Hình tròn */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  z-index: 1000; /* Đảm bảo luôn nổi trên cùng */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Animation rung nhẹ thu hút sự chú ý */
+  animation: pulse 2s infinite;
+}
+  .floating-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  /* 2. Lớp nền mờ (Overlay) bao phủ toàn màn hình */
+  .popup-overlay {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu đen mờ 50% */
+    z-index: 9998;
+    animation: fadeIn 0.3s; /* Hiệu ứng hiện dần */
+  }
+
+  /* 3. Khung Popup chính chứa trang web */
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa chính xác */
+    width: 90%;   /* Chiều rộng popup (80% màn hình) */
+    height: 90%;  /* Chiều cao popup */
+    max-width: 1100px; /* Giới hạn độ rộng tối đa */
+    background: white;
+    
+    /* --- TÙY CHỈNH VIỀN MÀU Ở ĐÂY --- */
+    border: 5px solid #fed7ff; /* Viền màu đỏ cam, dày 5px */
+    border-radius: 10px;
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header của Popup (chứa nút đóng) */
+  .popup-header {
+    background: #f1f1f1;
+    padding: 10px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Nút tắt Popup (dấu X) */
+  .close-bt2 {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  .close-bt2:hover { background: #cc0000; }
+
+  /* Thẻ Iframe để hiện web khác */
+  iframe.popup-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <button class="floating-btn" onclick="togglePopup(true)">
+    <img src="notes.png" width="40px" alt="">
+  </button>
+
+  <div id="myPopup" class="popup-overlay">
+    <div class="popup-content">
+      
+      <div class="popup-header">
+        <button class="close-bt2" onclick="togglePopup(false)">X Đóng</button>
+      </div>
+
+      <iframe src="https://emomap.onrender.com/student" class="popup-frame" title="Web Content"></iframe>
+      
+    </div>
+  </div>
+
+  <script>
+    function togglePopup(show) {
+      const popup = document.getElementById('myPopup');
+      if (show) {
+        popup.style.display = 'block';
+      } else {
+        popup.style.display = 'none';
+      }
+    }
+
+    // Đóng popup khi click ra ngoài vùng nội dung
+    document.getElementById('myPopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        togglePopup(false);
+      }
+    });
+  </script>
+    
+
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

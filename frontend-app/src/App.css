@@ -1,0 +1,211 @@
+#root {
+  margin: 0 auto;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Thiết lập Font chữ chung cho toàn app */
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(180deg, #fff0f5 0%, #fdfbf7 100%);/* Màu kem nhạt làm nền, rất dịu mắt */
+  margin: 0;
+  padding: 0;
+}
+#khung
+{
+  background: linear-gradient(180deg, #fff0f5 0%, #fdfbf7 100%);
+}
+/* --- STYLE CHO TIÊU ĐỀ TRANG CHỦ --- */
+.page-header {
+  text-align: center;
+  padding: 50px 20px 30px; /* Nền chuyển màu hồng phấn nhẹ */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Tiêu đề chính */
+.main-title {
+  font-size: 3rem; /* Chữ to rõ */
+  font-weight: 900;
+  margin: 0;
+  
+  /* Hiệu ứng chữ màu Gradient (Tím sang Xanh) */
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Bóng đổ nhẹ để chữ nổi lên */
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+}
+
+/* Lời dẫn nhỏ bên dưới */
+.sub-title {
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Icon trang trí (Hoa, Cây) */
+.icon-decoration {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite; /* Hiệu ứng bay bay */
+}
+
+.icon-decoration.right {
+  animation-delay: 1.5s; /* Bay lệch nhịp cho tự nhiên */
+}
+
+/* Animation bay nhẹ */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  30% { transform: translateY(-90px) rotate(5deg); }
+  100% { transform: translateY(-30px) rotate(0deg); }
+}
+
+/* --- KHUNG KHẢO SÁT (Giả lập) --- */
+.survey-container {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  padding: 20px;
+}
+
+.survey-placeholder {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Bóng mờ hiện đại */
+  border: 2px solid #fff0f5;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .icon-decoration {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* =========================================
+   5. LANDING PAGE STYLES (MODERN SCROLLYTELLING)
+   ========================================= */
+.progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--primary), #d946ef); transform-origin: 0%; z-index: 9999; }
+.landing-wrapper { width: 100%; overflow-x: hidden; background: white; }
+
+.snap-section { 
+  min-height: 90vh; 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+  overflow: hidden; 
+  padding: 80px 20px; 
+}
+
+.hero-section { min-height: 100vh; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.8), rgba(255,255,255,0)); }
+.alt-bg { background-color: #f8fafc; }
+
+.blob { position: absolute; filter: blur(100px); z-index: 0; opacity: 0.5; border-radius: 50%; }
+.blob-1 { width: 500px; height: 500px; background: #c7d2fe; top: -150px; left: -150px; animation: float 10s infinite ease-in-out; }
+.blob-2 { width: 600px; height: 600px; background: #fbcfe8; bottom: -200px; right: -200px; animation: float 12s infinite ease-in-out reverse; }
+@keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(50px, 80px); } }
+
+.content-box { max-width: 1100px; width: 100%; padding: 0 20px; position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+.content-box.column { text-align: center; gap: 30px; max-width: 1000px; }
+.content-box.center { text-align: center; }
+
+/* -- Trang 1: Giới thiệu & Tính năng -- */
+.center-text-group { text-align: center; margin-bottom: 50px; }
+.badge { display: inline-block; background: white; color: var(--primary); padding: 10px 30px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.1); }
+.hero-title { font-size: 5rem; line-height: 1.1; margin-bottom: 30px; font-weight: 900; color: #111827; letter-spacing: -2px; }
+.gradient-text { background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { font-size: 1.4rem; color: #4b5563; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
+
+/* Feature Row */
+.features-row { display: flex; justify-content: center; gap: 30px; width: 100%; flex-wrap: wrap; margin-bottom: 40px; }
+.feature-card { background: white; padding: 30px 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); flex: 1; min-width: 250px; text-align: center; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15); }
+.feature-card h3 { font-size: 1.2rem; color: #1f2937; margin-bottom: 10px; font-weight: 700; }
+.feature-card p { font-size: 0.95rem; color: #6b7280; line-height: 1.5; }
+
+.icon-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-weight: bold; }
+.icon-circle.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.icon-circle.purple { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+.icon-circle.green { background: linear-gradient(135deg, #10b981, #059669); }
+
+/* -- Trang 2: Demo 4 Ô -- */
+.demo-grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; width: 100%; margin-top: 40px; }
+
+.demo-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer; }
+.demo-card:hover { transform: scale(1.02); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+
+.browser-header { height: 30px; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; padding: 0 12px; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
+
+.image-placeholder { height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #94a3b8; gap: 10px; position: relative; background-color: #f3f4f6; overflow: hidden; }
+.image-placeholder img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s ease; }
+.demo-card:hover .image-placeholder img { transform: scale(1.05); }
+
+/* Background màu dự phòng cho ảnh demo */
+.image-placeholder.blue-bg { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+.image-placeholder.purple-bg { background: linear-gradient(135deg, #f3e8ff, #d8b4fe); }
+.image-placeholder.orange-bg { background: linear-gradient(135deg, #ffedd5, #fdba74); }
+.image-placeholder.green-bg { background: linear-gradient(135deg, #dcfce7, #86efac); }
+
+.fallback-icon { z-index: 1; position: absolute; }
+.image-placeholder span { font-weight: 600; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1; }
+
+.card-desc { padding: 15px; text-align: center; font-size: 0.95rem; color: #4b5563; font-weight: 600; background: white; border-top: 1px solid #f1f5f9; }
+
+/* -- Trang 3: CTA & Footer -- */
+.scroll-indicator { position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 8px; color: #9ca3af; font-size: 0.9rem; font-weight: 500; opacity: 0.8; cursor: pointer; }
+
+.start-btn-big { background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); color: white; border: none; padding: 25px 60px; font-size: 1.5rem; border-radius: 60px; font-weight: 800; cursor: pointer; box-shadow: 0 20px 50px rgba(99, 102, 241, 0.4); display: flex; align-items: center; gap: 15px; transition: all 0.3s; margin-top: 30px; }
+.start-btn-big:hover { box-shadow: 0 30px 70px rgba(99, 102, 241, 0.6); transform: translateY(-5px) scale(1.05); }
+
+.trust-badges { margin-top: 40px; display: flex; gap: 20px; color: #6b7280; font-size: 0.9rem; font-weight: 500; }
+
+

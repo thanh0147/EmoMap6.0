@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f0f4f8; /* Màu nền xám xanh nhẹ hiện đại */
+  font-family: 'Inter', sans-serif;
+}

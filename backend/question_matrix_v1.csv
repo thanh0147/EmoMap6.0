@@ -1,0 +1,51 @@
+﻿ID;Question_Content;Category;Weight
+Q01;Mình thấy khó khăn để thư giãn hay nghỉ ngơi.;Lo âu/Stress;1
+Q02;Mình cảm thấy khô miệng, tim đập nhanh dù không vận động mạnh.;Lo âu/Stress;1
+Q03;Mình không thấy vui vẻ hay hứng thú với những việc trước đây vẫn thích.;Trầm cảm nhẹ;1
+Q04;Mình cảm thấy mệt mỏi, uể oải và không có chút năng lượng nào.;Sức khỏe thể chất;1
+Q05;Mình cảm thấy khó tập trung vào bài giảng hoặc làm bài tập.;Học tập;1
+Q06;Mình hay bị giật mình hoặc lo lắng quá mức về những chuyện nhỏ nhặt.;Lo âu/Stress;1
+Q07;Mình cảm thấy buồn bã mà không rõ lý do.;Cảm xúc;1
+Q08;Mình bị mất ngủ hoặc ngủ không sâu giấc trong nhiều ngày.;Giấc ngủ;1
+Q09;Mình cảm thấy chán ăn hoặc ăn quá nhiều so với bình thường.;Rối loạn ăn uống;1
+Q10;Mình dễ nổi nóng, cáu gắt với mọi người xung quanh.;Cảm xúc;1
+Q11;Mình lo sợ sẽ làm thất vọng cha mẹ hoặc thầy cô.;Áp lực gia đình;1
+Q12;Mình cảm thấy bản thân kém cỏi hơn so với bạn bè cùng trang lứa.;Tự ti;1
+Q13;Mình cảm thấy bồn chồn, không thể ngồi yên một chỗ.;Lo âu/Stress;1
+Q14;Mình thấy bi quan về tương lai, không biết sẽ làm gì.;Định hướng;1
+Q15;Mình thường xuyên bị đau đầu hoặc đau bụng dù đi khám không ra bệnh.;Tâm bệnh;1
+Q16;Mình cảm thấy cô đơn dù đang ở giữa đám đông.;Cô đơn;1
+Q17;Mình hay trì hoãn công việc vì cảm thấy quá tải.;Học tập;1
+Q18;Mình rất sợ phải phát biểu trước lớp hoặc đám đông.;Lo âu xã hội;1
+Q19;Mình cảm thấy có lỗi về những việc không phải do mình gây ra.;Cảm xúc;1
+Q20;Mình thấy khó thở hoặc nghẹn ở cổ họng khi lo lắng.;Phản ứng cơ thể;1
+Q21;Mình từng bị ai đó ở trường nói xấu hoặc tung tin đồn thất thiệt.;Bạo lực ngôn từ;2
+Q22;Mình bị bạn bè trong lớp cố tình lờ đi, không cho chơi cùng.;Tẩy chay/Cô lập;2
+Q23;Có người đe dọa sẽ đánh hoặc làm hại mình sau giờ học.;Đe dọa bạo lực;2
+Q24;Mình bị chế giễu về ngoại hình hoặc hoàn cảnh gia đình.;Bắt nạt;2
+Q25;Mình từng bị ai đó ép làm những việc mình không muốn (đưa tiền, làm bài hộ).;Bóc lột/ trấn lột;2
+Q26;Mình bị ai đó đăng ảnh/clip nhạy cảm hoặc bêu rếu lên mạng xã hội.;Cyberbullying;2
+Q27;Mình cảm thấy không an toàn khi đến trường.;Môi trường;2
+Q28;Mình không có ai ở trường để tin tưởng và chia sẻ.;Cô lập xã hội;2
+Q29;Mình từng bị phá hoại đồ dùng học tập hoặc tư trang cá nhân.;Bắt nạt;2
+Q30;Mình cảm thấy sợ hãi khi nhận được tin nhắn từ một số người bạn.;Cyberbullying;2
+Q31;Mình bị ép buộc hoặc lôi kéo sử dụng chất kích thích (thuốc lá, rượu...).;Tệ nạn;2
+Q32;Mình từng chứng kiến bạo lực học đường nhưng không dám lên tiếng.;Tâm lý nạn nhân;2
+Q33;Mình cảm thấy bị phân biệt đối xử bởi giáo viên hoặc bạn bè.;Bất công;2
+Q34;Nhóm bạn bè gây áp lực buộc mình phải làm theo ý họ để được chơi cùng.;Áp lực đồng đẳng;2
+Q35;Mình thường trốn trong nhà vệ sinh hoặc thư viện để tránh mặt mọi người.;Né tránh;2
+Q36;Mình cảm thấy cuộc sống này thật vô nghĩa, không đáng sống.;Ý định tự sát;3
+Q37;Mình đã từng nghĩ đến việc tự kết thúc cuộc đời mình.;Ý định tự sát;3
+Q38;Mình đã từng hoặc đang có ý định tự làm đau bản thân (cắt tay, đập đầu...).;Tự hại;3
+Q39;Mình cảm thấy tuyệt vọng, không còn lối thoát nào cho vấn đề hiện tại.;Trầm cảm nặng;3
+Q40;Mình mong muốn ngủ một giấc và không bao giờ tỉnh lại nữa.;Ý định tự sát;3
+Q41;Mình đã chuẩn bị sẵn kế hoạch hoặc dụng cụ để tự tử.;Nguy cấp (SOS);3
+Q42;Mình thường xuyên nghe thấy tiếng nói trong đầu xúi giục làm điều dại dột.;Ảo thanh;3
+Q43;Mình cảm thấy mình là gánh nặng cho gia đình và mọi người.;Trầm cảm nặng;3
+Q44;Mình đã viết thư tuyệt mệnh hoặc dặn dò lại người thân/bạn bè.;Nguy cấp (SOS);3
+Q45;Gần đây mình có hành vi liều lĩnh, không quan tâm đến tính mạng bản thân.;Hành vi nguy cơ;3
+Q46;Mình cảm thấy thế giới này sẽ tốt đẹp hơn nếu không có mình.;Trầm cảm nặng;3
+Q47;Mình không thể kiểm soát được hành vi đập phá hoặc gây gổ dữ dội.;Mất kiểm soát;3
+Q48;Mình bị lạm dụng tình dục hoặc quấy rối nghiêm trọng.;Chấn thương tâm lý;3
+Q49;Mình đã từng thử tự tử trong quá khứ.;Tiền sử nguy cơ;3
+Q50;Ngay lúc này, mình đang rất muốn làm hại bản thân.;Khẩn cấp;3

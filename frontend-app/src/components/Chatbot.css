@@ -1,0 +1,447 @@
+/* --- 1. Nút Tròn Nổi (Floating Toggle Button) --- */
+.chat-toggle-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(180deg, #fc7fa9 0%, #ffe3ab 100%);
+  color: white;
+  border: none;
+  border-radius: 50%; /* Hình tròn */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  z-index: 1000; /* Đảm bảo luôn nổi trên cùng */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Animation rung nhẹ thu hút sự chú ý */
+  animation: pulse 2s infinite;
+}
+
+/* Hiệu ứng hover vào nút tròn */
+.chat-toggle-btn:hover {
+  transform: scale(1.1); /* Phóng to nhẹ */
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+}
+.cute-title
+{
+  font-weight: bold;
+}
+/* Khi popup mở, nút tròn đổi màu và xoay icon */
+.chat-toggle-btn.open {
+  background-color: #ff5b5b; /* Màu đỏ để đóng */
+  transform: rotate(90deg); /* Xoay icon X */
+  animation: none; /* Tắt animation rung */
+  box-shadow: 0 4px 15px rgba(255, 91, 91, 0.4);
+}
+
+/* Animation rung nhẹ (Pulse) */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(226, 94, 74, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(74, 144, 226, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+}
+
+/* --- 2. Khung Chat Popup --- */
+.chat-popup {
+  position: fixed;
+  bottom: 100px; /* Cách đáy 100px (nằm trên nút tròn) */
+  right: 30px;
+  width: 380px; /* Chiều rộng cố định */
+  height: 550px; /* Chiều cao cố định */
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Trạng thái ban đầu (ẩn đi) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95); /* Dịch xuống và thu nhỏ nhẹ */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Hiệu ứng mượt mà */
+}
+
+/* Trạng thái khi mở (hiện lên) */
+.chat-popup.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1); /* Trở về vị trí và kích thước chuẩn */
+}
+
+/* --- Các phần tử bên trong Popup (Header, Messages, Input) --- */
+
+/* Header */
+.chat-header {
+  background: linear-gradient(135deg, #fc98e6, #63a4ff);
+  color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  display: flex;
+  transition: color 0.2s;
+}
+.close-btn:hover { color: white; }
+
+/* ... (Giữ nguyên phần nút tròn floating và khung popup cũ) ... */
+
+/* --- CẬP NHẬT PHẦN KHU VỰC TIN NHẮN --- */
+
+/* Khu vực tin nhắn */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f0f2f5; /* Màu nền sáng kiểu Messenger */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Khoảng cách giữa các tin nhắn */
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f0f2f5;
+}
+
+/* Container cho MỖI tin nhắn (bao gồm avatar và bong bóng chat) */
+.message {
+  display: flex;
+  align-items: flex-end; /* Căn avatar xuống dưới cùng dòng */
+  margin-bottom: 5px;
+}
+
+/* Căn trái cho Bot */
+.message.bot {
+  justify-content: flex-start;
+}
+
+/* Căn phải cho User */
+.message.user {
+  justify-content: flex-end;
+}
+
+/* --- AVATAR --- */
+.avatar-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px; /* Căn chỉnh nhẹ với đáy bong bóng chat */
+  flex-shrink: 0; /* Không bị co lại */
+}
+
+.bot-avatar {
+  margin-right: 8px; /* Khoảng cách với bong bóng chat */
+  background-color: #e4e6eb; /* Màu nền avatar bot */
+}
+
+.user-avatar {
+  margin-left: 8px; /* Khoảng cách với bong bóng chat */
+  background-color: #4a90e2; /* Màu nền avatar user (trùng màu chủ đạo) */
+}
+
+.avatar-icon {
+  font-size: 18px;
+}
+.bot-avatar .avatar-icon { color: #555; }
+.user-avatar .avatar-icon { color: white; }
+
+
+/* --- BONG BÓNG CHAT (Message Content) --- */
+.message-content {
+  max-width: 100%; /* Giới hạn chiều rộng */
+  padding: 10px 14px;
+  border-radius: 18px; /* Bo tròn mạnh */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Kiểu bong bóng cho Bot (Màu xám, bên trái) */
+.message.bot .message-content {
+  background-color: #ffffff;
+  color: #050505;
+  border-bottom-left-radius: 4px; /* Góc nhọn phía avatar */
+}
+
+/* Kiểu bong bóng cho User (Màu xanh, bên phải) */
+.message.user .message-content {
+  background-color: #0084ff; /* Màu xanh đặc trưng của Messenger */
+  color: white;
+  border-bottom-right-radius: 4px; /* Góc nhọn phía avatar */
+}
+
+
+/* Loading dots (Giữ nguyên nhưng chỉnh màu cho hợp nền trắng) */
+.loading-dots span {
+  animation: dots 1.4s infinite ease-in-out both;
+  margin: 0 2px;
+  font-size: 20px;
+  color: #888;
+}
+@keyframes dots {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+} 
+
+/* Khu vực nhập liệu */
+.chat-input-area {
+  padding: 12px;
+  background-color: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+  background-color: #f8f9fa;
+}
+
+.chat-input-area input:focus {
+  border-color: #4a90e2;
+  background-color: #fff;
+}
+
+.send-btn {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding-left: 4px; /* Căn chỉnh icon send cho cân */
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.send-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 480px) {
+  .chat-popup {
+    width: calc(100% - 40px); /* Full màn hình trừ lề */
+    height: calc(100% - 120px);
+    bottom: 90px;
+    right: 20px;
+  }
+  .chat-toggle-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+/* ... Giữ nguyên các code cũ ... */
+
+/* --- 1. Wrapper để chứa Bong bóng chat + Nút nguồn --- */
+.message-bubble-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Bot căn trái */
+  max-width: 75%;
+}
+
+.message.user .message-bubble-wrapper {
+  align-items: flex-end; /* User căn phải */
+}
+
+/* --- 2. Nút "Xem nguồn" nhỏ xinh --- */
+.source-tag {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+  margin-left: 10px; /* Thụt vào một chút so với bong bóng */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.source-tag:hover {
+  background-color: #e2e6ea;
+  color: #4a90e2;
+}
+
+/* --- 3. POPUP HIỂN THỊ NGUỒN (Overlay) --- */
+.source-overlay {
+  position: absolute; /* Đè lên toàn bộ khung chat */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ */
+  display: flex;
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-out;
+  border-radius: 16px; /* Bo góc theo khung chat */
+}
+
+.source-content {
+  width: 85%;
+  max-height: 70%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Header của Popup Nguồn */
+.source-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.source-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.source-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #888;
+}
+.source-header button:hover { color: #ff5b5b; }
+
+/* Body của Popup Nguồn */
+.source-body {
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Từng mục nguồn */
+.source-item {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #fdfbf7;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.source-index {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #4a90e2;
+  background: rgba(74, 144, 226, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.source-item p { margin: 0; }
+
+/* Animation cho popup */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Container của danh sách nguồn */
+.source-container {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+/* Tiêu đề */
+.source-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Từng thẻ nguồn */
+.source-card {
+  background-color: #f9f9f9; /* Màu nền nhẹ */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Bo góc */
+  padding: 10px;
+  margin-bottom: 10px; /* Tách biệt giữa các nguồn */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Bóng nhẹ */
+}
+
+/* Tên file */
+.source-header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2563eb; /* Màu xanh */
+  margin-bottom: 5px;
+}
+
+/* Nội dung trích dẫn */
+.source-content {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5; /* Giãn dòng cho dễ đọc */
+}
