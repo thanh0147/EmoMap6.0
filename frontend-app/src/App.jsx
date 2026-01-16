@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = "https://emomap6-be.onrender.com/api";
 // --- COMPONENT 2: CHAT INTERFACE (Giao diện Chat - Đã sửa lỗi & Thêm Icon) ---
 const ChatInterface = () => {
   const navigate = useNavigate();
