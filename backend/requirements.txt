@@ -11,3 +11,4 @@ sentence-transformers
 pypdf
 python-multipart
 tiktoken
+supabase
