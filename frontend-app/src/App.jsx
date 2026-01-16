@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const API_URL = "https://emomap6-be.onrender.com/api";
+const API_URL = "https://racial-nested-restore-asset.trycloudflare.com/api";
 // --- COMPONENT 2: CHAT INTERFACE (Giao diện Chat - Đã sửa lỗi & Thêm Icon) ---
 const ChatInterface = () => {
   const navigate = useNavigate();
