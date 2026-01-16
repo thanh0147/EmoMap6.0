@@ -12,3 +12,4 @@ pypdf
 python-multipart
 tiktoken
 supabase
+llama_index
