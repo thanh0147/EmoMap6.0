@@ -383,7 +383,7 @@ const ResultPage = () => {
                Làm lại
              </button>
           </div>
-
+          
         </div>
       </div>
     </div>
@@ -402,6 +402,7 @@ export default function App() {
         <Route path="/result" element={<ResultPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
+      
       <Chatbot />
     </BrowserRouter>
   );
