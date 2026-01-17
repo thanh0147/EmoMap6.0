@@ -81,7 +81,7 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://focuses-worship-safe-cartoons.trycloudflare.com/api/chat', {
+      const response = await fetch('https://running-rhythm-thoroughly-buyers.trycloudflare.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage.content }),

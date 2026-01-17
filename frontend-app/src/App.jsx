@@ -11,7 +11,7 @@ import {
   Heart, Phone, Home, MessageCircle, RefreshCcw
 } from 'lucide-react';
 import './App.css';
-const API_URL = "https://focuses-worship-safe-cartoons.trycloudflare.com/api";
+const API_URL = "https://running-rhythm-thoroughly-buyers.trycloudflare.com/api";
 // --- COMPONENT 2: CHAT INTERFACE (Giao diện Chat - Đã sửa lỗi & Thêm Icon) ---
 const ChatInterface = () => {
   const navigate = useNavigate();
