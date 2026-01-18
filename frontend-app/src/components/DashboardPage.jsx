@@ -19,7 +19,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('https://running-rhythm-thoroughly-buyers.trycloudflare.com/api/dashboard');
+        const res = await fetch('https://thanhmc0147-backend-emo.hf.space/api/dashboard');
         const data = await res.json();
         if (data.status === 'success') {
           setStats(data);

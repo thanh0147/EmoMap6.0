@@ -158,7 +158,7 @@ const ChatbotPage = () => {
 
     try {
       // Gọi API Backend
-      const response = await fetch('https://running-rhythm-thoroughly-buyers.trycloudflare.com/api/chat', {
+      const response = await fetch('https://thanhmc0147-backend-emo.hf.space/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg.text }),
