@@ -264,12 +264,13 @@ const ResultPage = () => {
   const navigate = useNavigate();
   
   // Lấy điểm từ trang trước (mặc định 0 nếu không có)
-  const score = location.state?.score || 0; 
+  const score = location.state?.score || 0;
+  const score1 = (score/60)*100; 
   const total = 100;
 
   // --- HÀM CẤU HÌNH GIAO DIỆN THEO ĐIỂM SỐ ---
-  const getResultConfig = (score) => {
-    if (score >= 65) {
+  const getResultConfig = (score1) => {
+    if (score1 >= 70) {
       return {
         theme: "rose", // Tông màu chủ đạo
         icon: <Heart className="w-16 h-16 text-rose-500 fill-current animate" />,
@@ -280,7 +281,7 @@ const ResultPage = () => {
         btnColor: "bg-rose-500 hover:bg-rose-600",
         textColor: "text-rose-600"
       };
-    } else if (score >= 30) {
+    } else if (score1 >= 40) {
       return {
         theme: "orange",
         icon: <MessageCircle className="w-16 h-16 text-orange-500" />,
@@ -305,7 +306,7 @@ const ResultPage = () => {
     }
   };
 
-  const config = getResultConfig(score);
+  const config = getResultConfig(score1);
 
   return (
     <div className={`min-h-screen flex items-center justify-center p-4 ${config.bgColor} transition-colors duration-500`}>
@@ -325,7 +326,7 @@ const ResultPage = () => {
           </h2>
           
           <div className="mb-6">
-            <span className="text-5xl font-extrabold text-gray-800">{score}</span>
+            <span className="text-5xl font-extrabold text-gray-800">{score1}</span>
             <span className="text-gray-400 text-xl">/{total}</span>
             <p className="text-sm text-gray-400 mt-1 uppercase tracking-wider font-semibold">Mức độ căng thẳng</p>
           </div>
